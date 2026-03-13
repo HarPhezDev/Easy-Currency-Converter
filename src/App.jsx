@@ -156,10 +156,12 @@ const CurrencyConverter = () => {
         {/* HEADER */}
         <motion.div className="w-full flex flex-col md:flex-row justify-between items-center mb-8 md:mb-10 max-w-2xl" initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
           <div className="text-center md:text-left flex-1 whitespace-nowrap">
-            <h1 className={`text-3xl sm:text-4xl md:text-5xl font-black ${textColor}`}>
-              Easy Currency Converter
+            <h1 className={`text-3xl sm:text-4xl md:text-5xl mt-8 font-black ${textColor} text-center md:text-left`}>
+              Easy Currency <span className="block md:inline">Converter</span>
             </h1>
-            <p className={`${secondaryText} mt-2 text-sm sm:text-base md:text-lg font-medium`}>Convert currencies in real time with the latest market rates.</p>
+            <p className={`${secondaryText} mt-2 text-sm sm:text-base md:text-lg font-medium text-center md:text-left`}>
+              Convert currencies <span className="block md:inline">in real time with the latest market rates.</span>
+            </p>
           </div>
           <button onClick={handleDarkModeToggle} className="mt-4 md:mt-0 p-3 rounded-full bg-white/10 hover:bg-white/20 transition backdrop-blur-md border border-white/10">
             {darkMode ? <FiSun className="text-yellow-400 w-6 h-6" /> : <FiMoon className="text-gray-900 w-6 h-6" />}
