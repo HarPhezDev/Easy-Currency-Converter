@@ -207,7 +207,7 @@ const CurrencyConverter = () => {
               <FiChevronDown className={`absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none ${secondaryText}`} />
             </div>
 
-            <motion.button onClick={swap} className={`mt-4 md:mt-6 p-3 rounded-full ${darkMode ? "bg-white/10 hover:bg-white/20" : "bg-gray-200 hover:bg-gray-300"}`} animate={{ rotate: swapAnim }}>
+            <motion.button onClick={swap} className={`mt-4 md:mt-6 p-3 rounded-full ${darkMode ? "bg-white hover:bg-white" : "bg-gray-200 hover:bg-gray-300"}`} animate={{ rotate: swapAnim }}>
               ⇄
             </motion.button>
 
