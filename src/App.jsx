@@ -356,7 +356,7 @@ const CurrencyConverter = () => {
           {/* CONVERT BUTTON */}
           <button
             onClick={convert}
-            className="w-full py-4 sm:py-5 rounded-2xl font-black bg-green-500 hover:bg-green-400 text-black transition-all shadow-xl shadow-green-500/20 uppercase tracking-widest"
+            className="w-full py-4 sm:py-5 rounded-2xl cursor-pointer font-black bg-green-500 hover:bg-green-400 text-black transition-all shadow-xl shadow-green-500/20 uppercase tracking-widest"
             disabled={converting}
           >
             {converting ? "...Converting" : converted ? "Converted!" : "Convert Now"}
