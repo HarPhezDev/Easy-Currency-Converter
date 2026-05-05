@@ -10,7 +10,6 @@ document.head.appendChild(fontLink);
 
 const currencies = [
   { code: "USD", name: "US Dollar", color: "#00BFFF" },
-  { code: "NGN", name: "Nigerian Naira", color: "#008000" },
   { code: "EUR", name: "Euro", color: "#003399" },
   { code: "GBP", name: "British Pound", color: "#A52A2A" },
   { code: "JPY", name: "Japanese Yen", color: "#FF4500" },
@@ -19,11 +18,39 @@ const currencies = [
   { code: "CHF", name: "Swiss Franc", color: "#008000" },
   { code: "CNY", name: "Chinese Yuan", color: "#FF0000" },
   { code: "INR", name: "Indian Rupee", color: "#FF9933" },
+  { code: "BRL", name: "Brazilian Real", color: "#32CD32" },
+  { code: "ZAR", name: "South African Rand", color: "#FFD700" },
+  { code: "MXN", name: "Mexican Peso", color: "#DC143C" },
+  { code: "KRW", name: "South Korean Won", color: "#FF69B4" },
+  { code: "SGD", name: "Singapore Dollar", color: "#FF6347" },
+  { code: "NZD", name: "New Zealand Dollar", color: "#00CED1" },
+  { code: "SEK", name: "Swedish Krona", color: "#9370DB" },
+  { code: "NOK", name: "Norwegian Krone", color: "#FF1493" },
+  { code: "DKK", name: "Danish Krone", color: "#20B2AA" },
+  { code: "RUB", name: "Russian Ruble", color: "#FF8C00" },
+  { code: "TRY", name: "Turkish Lira", color: "#8A2BE2" },
+  { code: "EGP", name: "Egyptian Pound", color: "#DAA520" },
+  { code: "SAR", name: "Saudi Riyal", color: "#228B22" },
+  { code: "AED", name: "UAE Dirham", color: "#FF4500" },
+  { code: "THB", name: "Thai Baht", color: "#00FF7F" },
+  { code: "MYR", name: "Malaysian Ringgit", color: "#FF69B4" },
+  { code: "IDR", name: "Indonesian Rupiah", color: "#DC143C" },
+  { code: "PHP", name: "Philippine Peso", color: "#32CD32" },
+  { code: "VND", name: "Vietnamese Dong", color: "#FFD700" },
+  { code: "PKR", name: "Pakistani Rupee", color: "#FF6347" },
+  { code: "BDT", name: "Bangladeshi Taka", color: "#00CED1" },
+  { code: "KES", name: "Kenyan Shilling", color: "#9370DB" },
+  { code: "NGN", name: "Nigerian Naira", color: "#008000" },
+  { code: "GHS", name: "Ghanaian Cedi", color: "#FF1493" },
+  { code: "UGX", name: "Ugandan Shilling", color: "#20B2AA" },
+  { code: "TZS", name: "Tanzanian Shilling", color: "#FF8C00" },
+  { code: "LBP", name: "Lebanese Pound", color: "#8A2BE2" },
+  { code: "SYP", name: "Syrian Pound", color: "#DAA520" },
+  { code: "SDG", name: "Sudanese Pound", color: "#228B22" },
 ];
 
 const currencySymbols = {
   USD: "$",
-  NGN: "₦",
   EUR: "€",
   GBP: "£",
   JPY: "¥",
@@ -32,6 +59,35 @@ const currencySymbols = {
   CHF: "CHF",
   CNY: "¥",
   INR: "₹",
+  BRL: "R$",
+  ZAR: "R",
+  MXN: "$",
+  KRW: "₩",
+  SGD: "$",
+  NZD: "$",
+  SEK: "kr",
+  NOK: "kr",
+  DKK: "kr",
+  RUB: "₽",
+  TRY: "₺",
+  EGP: "£",
+  SAR: "﷼",
+  AED: "د.إ",
+  THB: "฿",
+  MYR: "RM",
+  IDR: "Rp",
+  PHP: "₱",
+  VND: "₫",
+  PKR: "₨",
+  BDT: "৳",
+  KES: "KSh",
+  NGN: "₦",
+  GHS: "₵",
+  UGX: "UGX",
+  TZS: "TSh",
+  LBP: "ل.ل",
+  SYP: "£",
+  SDG: "£",
 };
 
 const FloatingCurrency = ({ symbol, color }) => {
@@ -78,7 +134,7 @@ const CurrencyConverter = () => {
   const [converted, setConverted] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem("darkMode");
+  const saved = localStorage.getItem("darkMode");
     return saved ? JSON.parse(saved) : true;
   });
   const [error, setError] = useState(null);
@@ -104,7 +160,7 @@ const CurrencyConverter = () => {
       }, 500);
     } catch (err) {
       console.error(err);
-      setError("Conversion failed. Try again later or check your Internet Connection.");
+      setError("Conversion failed. Try again later or check your Internet Connection!");
       setConverting(false);
       setLoading(false);
     } finally {
@@ -185,6 +241,7 @@ const CurrencyConverter = () => {
               </span>
             </p>
           </div>
+          
           <button
             onClick={handleDarkModeToggle}
             className="mt-4 md:mt-0 p-3 rounded-full bg-white/10 hover:bg-white/20 transition backdrop-blur-md border border-white/10"
